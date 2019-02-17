@@ -1,5 +1,16 @@
 [
 	{
+		"name": "Controle Panel",
+		"description": "An admin dashboard for the node administrators",
+		"oauthInfos": {
+			"redirectURIs": ["admin.halium.net", "localhost:8080"],
+			"grantTypes": ["implicit", "refresh_token"],
+			"responseTypes": ["token", "code"],
+			"scopes": ["users", "clients.read"],
+			"public": true
+		}
+	},
+	{
 		"name": "Halium Task",
 		"description": "A simple task manager",
 		"oauthInfos": {
