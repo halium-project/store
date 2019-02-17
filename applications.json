@@ -1,0 +1,13 @@
+[
+	{
+		"name": "Halium Task",
+		"description": "A simple task manager",
+		"oauthInfos": {
+			"redirectURIs": ["task.halium.net", "localhost:42002"],
+			"grantTypes": ["implicit", "refresh_token"],
+			"responseTypes": ["token", "code"],
+			"scopes": ["tasks"],
+			"public": true
+		}
+	}
+]

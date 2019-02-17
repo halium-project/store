@@ -16,3 +16,7 @@ linters:
   disable:
     - dupl
     - lll
+
+issues:
+  exclude:
+    - G304
