@@ -10,6 +10,6 @@ type ControllerMock struct {
 	mock.Mock
 }
 
-func (t *ControllerMock) GetAll(ctx context.Context, cmd *GetAllCmd) []Application {
-	return t.Called(cmd).Get(0).([]Application)
+func (t *ControllerMock) GetAll(ctx context.Context, cmd *GetAllCmd) map[string]Application {
+	return t.Called(cmd).Get(0).(map[string]Application)
 }

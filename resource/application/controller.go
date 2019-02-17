@@ -2,6 +2,7 @@ package application
 
 import (
 	"context"
+	"strings"
 	"time"
 )
 
@@ -19,9 +20,17 @@ func NewController(storage StorageInterface) *Controller {
 	}
 }
 
-func (t *Controller) GetAll(ctx context.Context, cmd *GetAllCmd) []Application {
+func (t *Controller) GetAll(ctx context.Context, cmd *GetAllCmd) map[string]Application {
 	ctx, cancel := context.WithTimeout(ctx, time.Second)
 	defer cancel()
 
-	return t.storage.GetAll(ctx)
+	apps := t.storage.GetAll(ctx)
+
+	res := make(map[string]Application, len(apps))
+	for _, app := range apps {
+		appID := strings.Replace(strings.ToLower(app.Name), " ", "-", -1)
+		res[appID] = app
+	}
+
+	return res
 }

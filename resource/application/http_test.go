@@ -14,7 +14,9 @@ func Test_HTTP_GetAll_success(t *testing.T) {
 	controllerMock := new(ControllerMock)
 	httpHandler := NewHTTPHandler(controllerMock)
 
-	controllerMock.On("GetAll", &GetAllCmd{}).Return([]Application{validAppDescription}).Once()
+	controllerMock.On("GetAll", &GetAllCmd{}).Return(map[string]Application{
+		ValidAppID: ValidApp,
+	}).Once()
 
 	r := httptest.NewRequest("GET", "http://example.com/applications", nil)
 	w := httptest.NewRecorder()
@@ -26,8 +28,8 @@ func Test_HTTP_GetAll_success(t *testing.T) {
 	require.NoError(t, err)
 
 	assert.Equal(t, http.StatusOK, res.StatusCode)
-	assert.JSONEq(t, `[
-		{
+	assert.JSONEq(t, `{
+		"some-app": {
 			"name": "Some App",
 			"description": "A simple app",
 			"oauthInfos": {
@@ -38,7 +40,7 @@ func Test_HTTP_GetAll_success(t *testing.T) {
 				"public": true
 			}
 		}
-	]`, string(body))
+	}`, string(body))
 
 	controllerMock.AssertExpectations(t)
 }

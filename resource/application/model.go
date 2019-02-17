@@ -41,3 +41,17 @@ type OauthInfos struct {
 }
 
 type GetAllCmd struct{}
+
+const ValidAppID = "some-app"
+
+var ValidApp = Application{
+	Name:        "Some App",
+	Description: "A simple app",
+	OauthInfos: OauthInfos{
+		RedirectURIs:  []string{"some-url"},
+		GrantTypes:    []string{"implicit", "refresh_token"},
+		ResponseTypes: []string{"token", "code"},
+		Scopes:        []string{"permissions"},
+		Public:        true,
+	},
+}

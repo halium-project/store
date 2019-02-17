@@ -2,8 +2,9 @@ package application
 
 import (
 	"context"
-	"encoding/json"
 	"net/http"
+
+	"github.com/halium-project/go-server-utils/response"
 )
 
 type HTTPHandler struct {
@@ -11,7 +12,7 @@ type HTTPHandler struct {
 }
 
 type ControllerInterface interface {
-	GetAll(ctx context.Context, cmd *GetAllCmd) []Application
+	GetAll(ctx context.Context, cmd *GetAllCmd) map[string]Application
 }
 
 func NewHTTPHandler(application ControllerInterface) *HTTPHandler {
@@ -23,9 +24,5 @@ func NewHTTPHandler(application ControllerInterface) *HTTPHandler {
 func (t *HTTPHandler) GetAll(w http.ResponseWriter, r *http.Request) {
 	applications := t.application.GetAll(r.Context(), &GetAllCmd{})
 
-	err := json.NewEncoder(w).Encode(applications)
-	if err != nil {
-		w.WriteHeader(http.StatusInternalServerError)
-		return
-	}
+	response.Write(w, http.StatusOK, applications)
 }
