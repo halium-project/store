@@ -1,0 +1,6 @@
+coverage.out
+store
+vendor/
+*.cov
+*.out
+*.log
