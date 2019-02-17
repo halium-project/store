@@ -28,3 +28,9 @@ install:
 script:
   - go test -v -race -timeout=1m ./...
   - go test -v -timeout=1m -cover -coverprofile=coverage.out ./...
+
+
+cache:
+  directories:
+    - $HOME/.cache/go-build
+    - $HOME/gopath/pkg/mod
