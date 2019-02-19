@@ -16,7 +16,7 @@ func Test_Controller_GetAll_success(t *testing.T) {
 	res := controller.GetAll(context.Background(), &GetAllCmd{})
 
 	assert.EqualValues(t, map[string]Application{
-		ValidAppID: ValidApp,
+		ValidApp.ID: ValidApp,
 	}, res)
 
 	storageMock.AssertExpectations(t)

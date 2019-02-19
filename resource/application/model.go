@@ -1,6 +1,9 @@
 package application
 
 type Application struct {
+	// Application unique identifier.
+	ID string `json:"id"`
+
 	// Name is the human-readable string name of the client to be presented to the
 	// end-user during authorization.
 	Name string `json:"name"`
@@ -8,11 +11,6 @@ type Application struct {
 	// Description of the application.
 	Description string `json:"description"`
 
-	// OauthInfo required by the Oauth2 protocol.
-	OauthInfos OauthInfos `json:"oauthInfos"`
-}
-
-type OauthInfos struct {
 	// RedirectURIs is an array of allowed redirect urls for the client, for example:
 	// http://mydomain/oauth/callback.
 	RedirectURIs []string `json:"redirectURIs"`
@@ -42,16 +40,13 @@ type OauthInfos struct {
 
 type GetAllCmd struct{}
 
-const ValidAppID = "some-app"
-
 var ValidApp = Application{
-	Name:        "Some App",
-	Description: "A simple app",
-	OauthInfos: OauthInfos{
-		RedirectURIs:  []string{"some-url"},
-		GrantTypes:    []string{"implicit", "refresh_token"},
-		ResponseTypes: []string{"token", "code"},
-		Scopes:        []string{"permissions"},
-		Public:        true,
-	},
+	ID:            "some-app",
+	Name:          "Some App",
+	Description:   "A simple app",
+	RedirectURIs:  []string{"some-url"},
+	GrantTypes:    []string{"implicit", "refresh_token"},
+	ResponseTypes: []string{"token", "code"},
+	Scopes:        []string{"permissions"},
+	Public:        true,
 }

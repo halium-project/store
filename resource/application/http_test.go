@@ -15,7 +15,7 @@ func Test_HTTP_GetAll_success(t *testing.T) {
 	httpHandler := NewHTTPHandler(controllerMock)
 
 	controllerMock.On("GetAll", &GetAllCmd{}).Return(map[string]Application{
-		ValidAppID: ValidApp,
+		ValidApp.ID: ValidApp,
 	}).Once()
 
 	r := httptest.NewRequest("GET", "http://example.com/applications", nil)
@@ -30,15 +30,14 @@ func Test_HTTP_GetAll_success(t *testing.T) {
 	assert.Equal(t, http.StatusOK, res.StatusCode)
 	assert.JSONEq(t, `{
 		"some-app": {
+			"id": "some-app",
 			"name": "Some App",
 			"description": "A simple app",
-			"oauthInfos": {
-				"redirectURIs": ["some-url"],
-				"grantTypes": ["implicit", "refresh_token"],
-				"responseTypes": ["token", "code"],
-				"scopes": ["permissions"],
-				"public": true
-			}
+			"redirectURIs": ["some-url"],
+			"grantTypes": ["implicit", "refresh_token"],
+			"responseTypes": ["token", "code"],
+			"scopes": ["permissions"],
+			"public": true
 		}
 	}`, string(body))
 

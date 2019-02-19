@@ -12,15 +12,14 @@ import (
 
 const sampleAppDescription = `[
 	{
+		"id": "some-app",
 		"name": "Some App",
 		"description": "A simple app",
-		"oauthInfos": {
-			"redirectURIs": ["some-url"],
-			"grantTypes": ["implicit", "refresh_token"],
-			"responseTypes": ["token", "code"],
-			"scopes": ["permissions"],
-			"public": true
-		}
+		"redirectURIs": ["some-url"],
+		"grantTypes": ["implicit", "refresh_token"],
+		"responseTypes": ["token", "code"],
+		"scopes": ["permissions"],
+		"public": true
 	}
 ]`
 
@@ -37,19 +36,7 @@ func Test_Storage_LoadFromFile_GetAll_success(t *testing.T) {
 
 	res := storage.GetAll(context.Background())
 
-	assert.EqualValues(t, []Application{
-		{
-			Name:        "Some App",
-			Description: "A simple app",
-			OauthInfos: OauthInfos{
-				RedirectURIs:  []string{"some-url"},
-				GrantTypes:    []string{"implicit", "refresh_token"},
-				ResponseTypes: []string{"token", "code"},
-				Scopes:        []string{"permissions"},
-				Public:        true,
-			},
-		},
-	}, res)
+	assert.EqualValues(t, []Application{ValidApp}, res)
 }
 
 func Test_Storage_LoadFromFile_with_an_invalid_file(t *testing.T) {
