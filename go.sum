@@ -4,8 +4,6 @@ github.com/davecgh/go-spew v1.1.1 h1:vj9j/u1bqnvCEfJOwUhtlOARqs3+rkHYY13jYWTU97c
 github.com/davecgh/go-spew v1.1.1/go.mod h1:J7Y8YcW2NihsgmVo/mv3lAwl/skON4iLHjSsI+c5H38=
 github.com/gorilla/mux v1.7.0 h1:tOSd0UKHQd6urX6ApfOn4XdBMY6Sh1MfxV3kmaazO+U=
 github.com/gorilla/mux v1.7.0/go.mod h1:1lud6UwP+6orDFRuTfBEV8e9/aOM/c4fVVCaMa2zaAs=
-github.com/halium-project/go-server-utils v0.0.0-20190217122131-a2b0df672213 h1:vw6Yx4WRFAWMclljlQFY5Lpe5Al0sRTiV0TeenG6AVE=
-github.com/halium-project/go-server-utils v0.0.0-20190217122131-a2b0df672213/go.mod h1:gIObxukRaXDF5NqMdrjiRcOWNei3vmCsbbxgZMrFoMc=
 github.com/halium-project/go-server-utils v0.0.0-20190217155233-7fd311abb3fa h1:GShvGX/xbZMQJneWUmfdvhvSA0rh43uITZ6rCkzn8YI=
 github.com/halium-project/go-server-utils v0.0.0-20190217155233-7fd311abb3fa/go.mod h1:gIObxukRaXDF5NqMdrjiRcOWNei3vmCsbbxgZMrFoMc=
 github.com/konsorten/go-windows-terminal-sequences v1.0.1 h1:mweAR1A6xJ3oS2pRaGiHgQ4OO8tzTaLawm8vnODuwDk=
