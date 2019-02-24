@@ -5,7 +5,7 @@
 		"description": "An admin dashboard for the node administrators",
     "redirectURIs": ["https://admin.halium.net", "http://localhost:8081"],
     "grantTypes": ["implicit"],
-    "responseTypes": ["token", "code"],
+    "responseTypes": ["token"],
     "scopes": ["users", "clients.read"],
     "public": true
 	},
@@ -15,7 +15,17 @@
 		"description": "A simple contact manager",
     "redirectURIs": ["https://contact.halium.net", "http://localhost:8082"],
     "grantTypes": ["implicit"],
-    "responseTypes": ["token", "code"],
+    "responseTypes": ["token"],
+    "scopes": ["contacts"],
+    "public": true
+	},
+	{
+    "id": "halium-todo-cli",
+		"name": "Halium Todo CLI",
+		"description": "Manage your Todos with a CLI",
+    "redirectURIs": ["web-display"],
+    "grantTypes": ["authorize_coe", "refresh_token"],
+    "responseTypes": ["todos"],
     "scopes": ["contacts"],
     "public": true
 	}
