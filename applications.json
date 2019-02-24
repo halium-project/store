@@ -3,20 +3,20 @@
     "id": "controle-panel",
 		"name": "Controle Panel",
 		"description": "An admin dashboard for the node administrators",
-    "redirectURIs": ["admin.halium.net", "localhost:8080"],
-    "grantTypes": ["implicit", "refresh_token"],
+    "redirectURIs": ["https://admin.halium.net", "http://localhost:8081"],
+    "grantTypes": ["implicit"],
     "responseTypes": ["token", "code"],
     "scopes": ["users", "clients.read"],
     "public": true
 	},
 	{
-    "id": "halium-task",
-		"name": "Halium Task",
-		"description": "A simple task manager",
-    "redirectURIs": ["task.halium.net", "localhost:42002"],
-    "grantTypes": ["implicit", "refresh_token"],
+    "id": "halium-contact",
+		"name": "Halium Contact",
+		"description": "A simple contact manager",
+    "redirectURIs": ["https://contact.halium.net", "http://localhost:8082"],
+    "grantTypes": ["implicit"],
     "responseTypes": ["token", "code"],
-    "scopes": ["tasks"],
+    "scopes": ["contacts"],
     "public": true
 	}
 ]
