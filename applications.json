@@ -1,32 +1,32 @@
 [
 	{
-    "id": "controle-panel",
+		"id": "controle-panel",
 		"name": "Controle Panel",
 		"description": "An admin dashboard for the node administrators",
-    "redirectURIs": ["https://admin.halium.net", "http://localhost:8081"],
-    "grantTypes": ["implicit"],
-    "responseTypes": ["token"],
-    "scopes": ["users", "clients.read"],
-    "public": true
+		"redirectURIs": ["https://admin.halium.net", "http://localhost:8081"],
+		"grantTypes": ["implicit"],
+		"responseTypes": ["token"],
+		"scopes": ["users", "clients.read"],
+		"public": true
 	},
 	{
-    "id": "halium-contact",
+		"id": "halium-contact",
 		"name": "Halium Contact",
 		"description": "A simple contact manager",
-    "redirectURIs": ["https://contact.halium.net", "http://localhost:8082"],
-    "grantTypes": ["implicit"],
-    "responseTypes": ["token"],
-    "scopes": ["contacts"],
-    "public": true
+		"redirectURIs": ["https://contact.halium.net", "http://localhost:8082"],
+		"grantTypes": ["implicit"],
+		"responseTypes": ["token"],
+		"scopes": ["contacts"],
+		"public": true
 	},
 	{
-    "id": "halium-todo-cli",
+		"id": "halium-todo-cli",
 		"name": "Halium Todo CLI",
 		"description": "Manage your Todos with a CLI",
-    "redirectURIs": ["web-display"],
-    "grantTypes": ["authorize_coe", "refresh_token"],
-    "responseTypes": ["todos"],
-    "scopes": ["contacts"],
-    "public": true
+		"redirectURIs": ["http://localhost:42000/web-display"],
+		"grantTypes": ["authorize_code", "refresh_token"],
+		"responseTypes": ["code"],
+		"scopes": ["todos"],
+		"public": true
 	}
 ]
